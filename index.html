@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" a href="estilo.css">
+    <title>Validador de rut</title>
+</head>
+<body>
+    <h1>Formulario de Validacion</h1>
+    <form action="main.php" method="post">
+        <label form="nombre">Escriba su nombre</label>
+        <input type="text" name="nombre" required><br/>
+        <label form="nombre">Escriba su apellido</label>
+        <input type="text" name="apellido" required><br/>
+        <label form="nombre">Escriba su Rut</label>
+        <input type="text" name="rut" maxlength="8" size="8" required>-
+        <input type="text" name="dv" maxlength="1" size=1 required><br/>
+        <input type="checkbox" required>Estoy de acuerdo<br/>
+        <input type="submit" value="Enviar" id="boton">
+        <input type="reset" value="Limpiar" id="boton1">
+        <input type="submit" value="Eliminar" id="boton2">
+
+
+    </form>
+</body>
+</html>
