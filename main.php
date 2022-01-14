@@ -53,9 +53,49 @@ $digito="0";
 /* Creamos dos condiciones, la primero dice que si el valor de $digito es 11, lo reemplazamos por un cero (el cero va entre comillas. De no hacerlo así, el programa considerará “nada” como cero, es decir si la persona no ingresa Digito Verificado y este corresponde a un cero, lo tomará como valido, las comillas, al considerarlo texto, evitan eso). El segundo dice que si el valor de $digito es 10, lo reemplazamos por una K, de no cumplirse ninguno de las condiciones, el valor de $digito no cambiará. */
 if($dv==$digito)
 {
-echo "Valido";
+echo 'Rut correcto, se ha guardado la informacion <br />';
 }else{
-echo "No Valido";
+echo 'Rut no valido, ingrese nuevamente su RUT <br />';
 }
 /* Por ultimo comprobamos si el resultado que obtuvimos es el mismo que ingreso la persona, de ser así se muestra el mensaje “Valido”, de no ser así se muestra el mensaje “No Valido” */
+
+// comprobacion de mail
+
+/* creamos una variable con cualquier */
+
+
+$valor = $_REQUEST["correo"];
+
+/*creamos la funcion que se encargara de la */
+
+
+function filtroMail($valor){
+           if(filter_var($valor, FILTER_VALIDATE_EMAIL) === FALSE){
+                return false;
+           }else{
+                if (preg_match("/(['])/",$valor)) {
+                     return false;
+                }
+                if (preg_match('/(["])/',$valor)) {
+                     return false;
+                }
+                if (preg_match("/([;])/",$valor)) {
+                     return false;
+                }
+                if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$valor)) {
+                     return false;
+                }else{
+                     $valor = filter_var($valor, FILTER_SANITIZE_EMAIL);
+                     return true;
+                }
+           }
+      } 
+//imprimimos solo el resultado negativo por el momento porque la idea es que se cargue en una base de datos 
+
+      if (!filtroMail($valor)) { 
+         echo 'Email incorrecto <a href="index.html"><button type="button">VOLVER</button></a>';
+ }else {
+         echo 'Email correcto';
+ } 
+
 ?>
