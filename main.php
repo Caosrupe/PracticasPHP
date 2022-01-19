@@ -55,7 +55,7 @@ if($dv==$digito)
 {
 echo 'Rut correcto, se ha guardado la informacion <br />';
 }else{
-echo 'Rut no valido, ingrese nuevamente su RUT <br />';
+echo 'Rut no valido, ingrese nuevamente su RUT <a href="index.html"><button type="button">VOLVER</button></a><br />';
 }
 /* Por ultimo comprobamos si el resultado que obtuvimos es el mismo que ingreso la persona, de ser así se muestra el mensaje “Valido”, de no ser así se muestra el mensaje “No Valido” */
 

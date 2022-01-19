@@ -32,9 +32,11 @@ input{
 
 }
 #boton2{
+    margin-left: 40px;
     background-color: red;
     color: black;
     font-size: 15px;
     padding: 5px;
     border-radius: 7px;
+    
 }
